@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- ?xml-stylesheet href="chrome://extendedlibrary/skin/" type="text/css"?> -->
+<!-- Extremely recommended to keep this css include!! -->
+<window id="mainWindow" title="Extended Library"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="main.js"/>
+	<hbox pack="end">
+		<vbox flex="1">
+			<progressmeter
+				id="identifier"
+				mode="determined"
+				value="0"
+				progresstext="Loading"/>
+		</vbox>
+		<textbox id="find-text" type="search" searchbutton="true" emptytext="Search EL" oncommand="extendedlibrary.searchCommand()"/>
+	</hbox>
+	<hbox flex="1">
+		<tree id="maintree" seltype="single" onselect="extendedlibrary.onTreeSelected()" flex="1">
+			<treecols>
+				<treecol flex="1" label="Title" />
+				<treecol flex="1" label="Artist" />				
+			</treecols>
+			<treechildren id="child">
+			</treechildren>
+		</tree>
+
+	</hbox>
+</window>
