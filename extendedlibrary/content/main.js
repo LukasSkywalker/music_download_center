@@ -73,7 +73,8 @@ var extendedlibrary = {
 						.createInstance(Components.interfaces.nsIWebBrowserPersist);
 		var file = Components.classes["@mozilla.org/file/local;1"]
 					 .createInstance(Components.interfaces.nsILocalFile);
-		file.initWithPath("C:\\Users\\Lukas\\Desktop\\file.mp3"); // download destination
+		var path = extendedlibrary.filePicker();
+		file.initWithPath(path); // download destination
 		var obj_URI = Components.classes["@mozilla.org/network/io-service;1"]
 						.getService(Components.interfaces.nsIIOService)
 						.newURI(aURLToDownload, null, null);
@@ -91,6 +92,7 @@ var extendedlibrary = {
 		}
 		persist.saveURI(obj_URI, null, null, null, "", file);
 	},
+	
 	readTags: function(data) {
 		var content = new Array(3);
 		data = String(data);
@@ -100,6 +102,24 @@ var extendedlibrary = {
 		content[2] = m[2];
 
 		return content;
+	},
+
+	filePicker: function() {
+		const nsIFilePicker = Components.interfaces.nsIFilePicker;
+		var fp = Components.classes["@mozilla.org/filepicker;1"]
+						.createInstance(nsIFilePicker);
+		fp.init(window, "Save File", nsIFilePicker.modeSave);
+		fp.appendFilters(nsIFilePicker.filterAll | nsIFilePicker.filterText);
+		var rv = fp.show();
+		if (rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
+		  var file = fp.file;
+		  // Get the path as string. Note that you usually won't 
+		  // need to work with the string paths.
+		  var path = fp.file.path;
+		  // work with returned nsILocalFile...
+		  return path;
+		}
+
 	},	
 };
 window.addEventListener("load", function(e) { extendedlibrary.onLoad(e); }, false);
