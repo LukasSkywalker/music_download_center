@@ -64,10 +64,10 @@ var extendedlibrary = {
         var currentitem = tree.treeBoxObject.view.getItemAtIndex(tree.currentIndex);
         var currentid = tree.treeBoxObject.view.getItemAtIndex(
                    tree.currentIndex).getAttribute("id");
-		var x = extendedlibrary.downloadBinary(currentid, "download.mp3");
+		var x = extendedlibrary.downloadBinary(currentid);
 	},
 	
-	downloadBinary: function(source, destination) {
+	downloadBinary: function(source) {
 		var aURLToDownload = source;
 		var persist = Components.classes["@mozilla.org/embedding/browser/nsWebBrowserPersist;1"]
 						.createInstance(Components.interfaces.nsIWebBrowserPersist);
