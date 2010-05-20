@@ -7,6 +7,7 @@
     <em:version>1.0</em:version>
     <em:creator>Lukas_Skywalker</em:creator>
     <em:description>Extend your NG Library with various online sources</em:description>
+ <em:optionsURL>chrome://extendedlibrary/content/options.xul</em:optionsURL>
     <em:homepageURL>http://www.getnightingale.org</em:homepageURL>
     <em:aboutURL>chrome://extendedlibrary/content/about.xul</em:aboutURL>
     <em:targetApplication>
