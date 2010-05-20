@@ -74,27 +74,29 @@ var extendedlibrary = {
 		var file = Components.classes["@mozilla.org/file/local;1"]
 					 .createInstance(Components.interfaces.nsILocalFile);
 		var path = extendedlibrary.filePicker();
-		file.initWithPath(path); // download destination
-		var obj_URI = Components.classes["@mozilla.org/network/io-service;1"]
-						.getService(Components.interfaces.nsIIOService)
-						.newURI(aURLToDownload, null, null);
-		persist.progressListener = {
-		  onProgressChange: function(aWebProgress, aRequest, aCurSelfProgress, aMaxSelfProgress, aCurTotalProgress, aMaxTotalProgress) {
-			var percentComplete = (aCurTotalProgress/aMaxTotalProgress)*100;
-			var ele = document.getElementById("identifier");
-			ele.innerHTML = percentComplete +"%";
-			ele.value = percentComplete;
-			var ele = document.getElementById("identifier-text");
-			var current = aCurTotalProgress/1000000;
-			var total = aMaxTotalProgress/1000000;
-			ele.value = current.toFixed(2)+" of "+total.toFixed(2)+" MB ("+percentComplete.toFixed(1)+"%)";
-		  },
-		  onStateChange: function(aWebProgress, aRequest, aStateFlags, aStatus) {
-			if (aStatus & Components.interfaces.nsIWebProgressListener.STATE_STOP)
-				alert("Download complete");// do something
-		  }
+		if (path) {
+			file.initWithPath(path); // download destination
+			var obj_URI = Components.classes["@mozilla.org/network/io-service;1"]
+							.getService(Components.interfaces.nsIIOService)
+							.newURI(aURLToDownload, null, null);
+			persist.progressListener = {
+			  onProgressChange: function(aWebProgress, aRequest, aCurSelfProgress, aMaxSelfProgress, aCurTotalProgress, aMaxTotalProgress) {
+				var percentComplete = (aCurTotalProgress/aMaxTotalProgress)*100;
+				var ele = document.getElementById("identifier");
+				ele.innerHTML = percentComplete +"%";
+				ele.value = percentComplete;
+				var ele = document.getElementById("identifier-text");
+				var current = aCurTotalProgress/1000000;
+				var total = aMaxTotalProgress/1000000;
+				ele.value = current.toFixed(2)+" of "+total.toFixed(2)+" MB ("+percentComplete.toFixed(1)+"%)";
+			  },
+			  onStateChange: function(aWebProgress, aRequest, aStateFlags, aStatus) {
+				if (aStatus & Components.interfaces.nsIWebProgressListener.STATE_STOP)
+					alert("Download complete");// do something
+			  }
+			}
+			persist.saveURI(obj_URI, null, null, null, "", file);
 		}
-		persist.saveURI(obj_URI, null, null, null, "", file);
 	},
 	
 	readTags: function(data) {
@@ -114,16 +116,17 @@ var extendedlibrary = {
 						.createInstance(nsIFilePicker);
 		fp.init(window, "Save File", nsIFilePicker.modeSave);
 		fp.appendFilters(nsIFilePicker.filterAll | nsIFilePicker.filterText);
+		fp.defaultString = "download";
+		fp.defaultExtension = "mp3";
 		var rv = fp.show();
 		if (rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
 		  var file = fp.file;
-		  // Get the path as string. Note that you usually won't 
-		  // need to work with the string paths.
 		  var path = fp.file.path;
-		  // work with returned nsILocalFile...
 		  return path;
 		}
-
+		if (rv == nsIFilePicker.returnCancel) {
+		  return "";
+		}
 	},	
 };
 window.addEventListener("load", function(e) { extendedlibrary.onLoad(e); }, false);
