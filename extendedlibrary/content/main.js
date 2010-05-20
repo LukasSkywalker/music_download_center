@@ -84,10 +84,14 @@ var extendedlibrary = {
 			var ele = document.getElementById("identifier");
 			ele.innerHTML = percentComplete +"%";
 			ele.value = percentComplete;
+			var ele = document.getElementById("identifier-text");
+			var current = aCurTotalProgress/1000000;
+			var total = aMaxTotalProgress/1000000;
+			ele.value = current.toFixed(2)+" of "+total.toFixed(2)+" MB ("+percentComplete.toFixed(1)+"%)";
 		  },
 		  onStateChange: function(aWebProgress, aRequest, aStateFlags, aStatus) {
 			if (aStatus & Components.interfaces.nsIWebProgressListener.STATE_STOP)
-				meh.jsdump("Hey, it just stopped!");// do something
+				alert("Download complete");// do something
 		  }
 		}
 		persist.saveURI(obj_URI, null, null, null, "", file);
