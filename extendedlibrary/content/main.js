@@ -46,7 +46,7 @@ var extendedlibrary = {
 	insertdata: function( content ) {
 		var oRootTreeChild = document.getElementById("child");
 		var oItem = document.createElement("treeitem");
-		oItem.setAttribute("id", content[0]);
+		oItem.setAttribute("id", content[0]+"%S"+content[1]+"%S"+content[2]);
 		
 		var oRow = document.createElement("treerow");
 		
@@ -71,12 +71,13 @@ var extendedlibrary = {
 	},
 	
 	downloadBinary: function(source) {
-		var aURLToDownload = source;
+		var data = source.split("%S");
+		var aURLToDownload = data[0];
 		var persist = Components.classes["@mozilla.org/embedding/browser/nsWebBrowserPersist;1"]
 						.createInstance(Components.interfaces.nsIWebBrowserPersist);
 		var file = Components.classes["@mozilla.org/file/local;1"]
 					 .createInstance(Components.interfaces.nsILocalFile);
-		var path = extendedlibrary.filePicker();
+		var path = extendedlibrary.filePicker(data);
 		if (path) {
 			file.initWithPath(path); // download destination
 			var obj_URI = Components.classes["@mozilla.org/network/io-service;1"]
@@ -113,13 +114,13 @@ var extendedlibrary = {
 		return content;
 	},
 
-	filePicker: function() {
+	filePicker: function(data) {
 		const nsIFilePicker = Components.interfaces.nsIFilePicker;
 		var fp = Components.classes["@mozilla.org/filepicker;1"]
 						.createInstance(nsIFilePicker);
 		fp.init(window, extendedlibrary.message, nsIFilePicker.modeSave);
 		fp.appendFilters(nsIFilePicker.filterAll | nsIFilePicker.filterText);
-		fp.defaultString = "download";
+		fp.defaultString = data[1]+" - "+data[2];
 		fp.defaultExtension = "mp3";
 		var rv = fp.show();
 		if (rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
