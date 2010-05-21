@@ -1,1 +1,5 @@
-<!ENTITY extendedlibrary.label "Your localized menuitem">
+<!ENTITY extendedlibrary.label "Extended Library">
+<!ENTITY extendedlibrary.apptitle "Extended Library">
+<!ENTITY extendedlibrary.treecol1.label "Artist">
+<!ENTITY extendedlibrary.treecol2.label "Title">
+<!ENTITY extendedlibrary.search "Search Extended Library">

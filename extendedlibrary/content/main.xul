@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
 <!-- ?xml-stylesheet href="chrome://extendedlibrary/skin/" type="text/css"?> -->
+<!DOCTYPE overlay SYSTEM "chrome://extendedlibrary/locale/extendedlibrary.dtd">
 <!-- Extremely recommended to keep this css include!! -->
-<window id="mainWindow" title="Extended Library"
+<window id="mainWindow" title="&extendedlibrary.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script src="main.js"/>
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="extendedlibrary-strings" src="chrome://extendedlibrary/locale/extendedlibrary.properties"/>
+	</stringbundleset>
 	<hbox pack="end">
 		<vbox flex="8">
 			<progressmeter
@@ -14,14 +18,14 @@
 			<label id="identifier-text" value=""/>
 		</vbox>
 		<vbox flex="1">
-			<textbox id="find-text" type="search" searchbutton="true" emptytext="Search EL" oncommand="extendedlibrary.searchCommand()"/>
+			<textbox id="find-text" type="search" searchbutton="true" emptytext="&extendedlibrary.search;" oncommand="extendedlibrary.searchCommand()"/>
 		</vbox>
 	</hbox>
 	<hbox flex="1">
 		<tree id="maintree" seltype="single" onselect="extendedlibrary.onTreeSelected()" flex="1">
 			<treecols>
-				<treecol flex="1" label="Title" />
-				<treecol flex="1" label="Artist" />				
+				<treecol flex="1" label="&extendedlibrary.treecol1.label;" />
+				<treecol flex="1" label="&extendedlibrary.treecol2.label;" />				
 			</treecols>
 			<treechildren id="child">
 			</treechildren>
