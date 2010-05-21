@@ -131,6 +131,6 @@ var extendedlibrary = {
 		if (rv == nsIFilePicker.returnCancel) {
 		  return "";
 		}
-	},	
+	},
 };
 window.addEventListener("load", function(e) { extendedlibrary.onLoad(e); }, false);

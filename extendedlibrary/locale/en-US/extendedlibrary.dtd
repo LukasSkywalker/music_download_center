@@ -3,3 +3,13 @@
 <!ENTITY extendedlibrary.treecol1.label "Artist">
 <!ENTITY extendedlibrary.treecol2.label "Title">
 <!ENTITY extendedlibrary.search "Search Extended Library">
+
+<!ENTITY extendedlibrary.menu.file "File">
+<!ENTITY extendedlibrary.menu.file.quit "Quit">
+<!ENTITY extendedlibrary.menu.tools "Tools">
+<!ENTITY extendedlibrary.menu.tools.settings "Settings...">
+<!ENTITY extendedlibrary.menu.help "Help">
+<!ENTITY extendedlibrary.menu.help.help "Help (Online)">
+<!ENTITY extendedlibrary.menu.help.releasenotes "Release notes">
+<!ENTITY extendedlibrary.menu.help.bugreport "Report a bug">
+<!ENTITY extendedlibrary.menu.help.about "About">

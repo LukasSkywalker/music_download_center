@@ -8,6 +8,26 @@
 	<stringbundleset id="stringbundleset">
 		<stringbundle id="extendedlibrary-strings" src="chrome://extendedlibrary/locale/extendedlibrary.properties"/>
 	</stringbundleset>
+	<menubar id="menubar">
+	  <menu id="file-menu" label="&extendedlibrary.menu.file;">
+		<menupopup id="file-popup">
+		  <menuitem label="&extendedlibrary.menu.file.quit;" oncommand="window.close()"/>
+		</menupopup>
+	  </menu>
+	  <menu id="tools-menu" label="&extendedlibrary.menu.tools;">
+		<menupopup id="tools-popup">
+		  <menuitem label="&extendedlibrary.menu.tools.settings;" oncommand="window.open('chrome://extendedlibrary/content/options.xul', '', 'chrome=yes,centerscreen=yes')"/>
+		</menupopup>
+	  </menu>
+	  <menu id="help-menu" label="&extendedlibrary.menu.help;">
+		<menupopup id="help-popup">
+		  <menuitem label="&extendedlibrary.menu.help.help;"/>
+		  <menuitem label="&extendedlibrary.menu.help.releasenotes;"/>
+		  <menuitem label="&extendedlibrary.menu.help.bugreport;"/>
+		  <menuitem label="&extendedlibrary.menu.help.about;" oncommand="window.open('chrome://extendedlibrary/content/about.xul', '', 'chrome=yes,centerscreen=yes')"/>
+		</menupopup>
+	  </menu>
+	</menubar>
 	<hbox pack="end">
 		<vbox flex="8">
 			<progressmeter
