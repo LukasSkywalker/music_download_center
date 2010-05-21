@@ -2,7 +2,10 @@ var extendedlibrary = {
 	onLoad: function() {
 		// initialization code
 		this.initialized = true;
-		this.strings = document.getElementById("extendedlibrary-strings");
+		var strings = document.getElementById("extendedlibrary-strings");
+		this.message = strings.getString('extendedlibrary.message');
+		this.searchcomplete = strings.getString('extendedlibrary.searchcomplete');		
+		this.of = strings.getString('extendedlibrary.of');		
 	},
 	
 	getFile: function(source) {
@@ -37,7 +40,7 @@ var extendedlibrary = {
 				extendedlibrary.insertdata(content);
 			}
 		}
-		alert("End");
+		alert(extendedlibrary.searchcomplete);
 	},
 	
 	insertdata: function( content ) {
@@ -88,7 +91,7 @@ var extendedlibrary = {
 				var ele = document.getElementById("identifier-text");
 				var current = aCurTotalProgress/1000000;
 				var total = aMaxTotalProgress/1000000;
-				ele.value = current.toFixed(2)+" of "+total.toFixed(2)+" MB ("+percentComplete.toFixed(1)+"%)";
+				ele.value = current.toFixed(2)+" "+extendedlibrary.of+" "+total.toFixed(2)+" MB ("+percentComplete.toFixed(1)+"%)";
 			  },
 			  onStateChange: function(aWebProgress, aRequest, aStateFlags, aStatus) {
 				if (aStatus & Components.interfaces.nsIWebProgressListener.STATE_STOP)
@@ -114,7 +117,7 @@ var extendedlibrary = {
 		const nsIFilePicker = Components.interfaces.nsIFilePicker;
 		var fp = Components.classes["@mozilla.org/filepicker;1"]
 						.createInstance(nsIFilePicker);
-		fp.init(window, "Save File", nsIFilePicker.modeSave);
+		fp.init(window, extendedlibrary.message, nsIFilePicker.modeSave);
 		fp.appendFilters(nsIFilePicker.filterAll | nsIFilePicker.filterText);
 		fp.defaultString = "download";
 		fp.defaultExtension = "mp3";
