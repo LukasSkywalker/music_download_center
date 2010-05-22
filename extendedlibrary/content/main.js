@@ -132,5 +132,12 @@ var extendedlibrary = {
 		  return "";
 		}
 	},
+	
+	openUrl: function(aUrl) {
+		var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
+		  .getService(Components.interfaces.nsIWindowMediator)
+		  .getMostRecentWindow('navigator:browser');
+		win.openUILinkIn(aUrl, 'tab');
+	},
 };
 window.addEventListener("load", function(e) { extendedlibrary.onLoad(e); }, false);

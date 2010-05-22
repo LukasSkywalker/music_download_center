@@ -21,9 +21,9 @@
 	  </menu>
 	  <menu id="help-menu" label="&extendedlibrary.menu.help;">
 		<menupopup id="help-popup">
-		  <menuitem label="&extendedlibrary.menu.help.help;"/>
-		  <menuitem label="&extendedlibrary.menu.help.releasenotes;"/>
-		  <menuitem label="&extendedlibrary.menu.help.bugreport;"/>
+		  <menuitem label="&extendedlibrary.menu.help.help;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/wiki/show/extlib/Documentation')"/>
+		  <menuitem label="&extendedlibrary.menu.help.releasenotes;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/wiki/show/extlib/Release_Notes')"/>
+		  <menuitem label="&extendedlibrary.menu.help.bugreport;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/spaces/extlib/tickets')"/>
 		  <menuitem label="&extendedlibrary.menu.help.about;" oncommand="window.open('chrome://extendedlibrary/content/about.xul', '', 'chrome=yes,centerscreen=yes')"/>
 		</menupopup>
 	  </menu>
