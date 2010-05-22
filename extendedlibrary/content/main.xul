@@ -5,26 +5,32 @@
 <window id="mainWindow" title="&extendedlibrary.label;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script src="main.js"/>
+	<keyset>
+		<key id="help-key" key="VK_F1"/>
+		<key id="quit-key" modifiers="control" key="Q"/>
+	</keyset>
 	<stringbundleset id="stringbundleset">
 		<stringbundle id="extendedlibrary-strings" src="chrome://extendedlibrary/locale/extendedlibrary.properties"/>
 	</stringbundleset>
 	<menubar id="menubar">
-	  <menu id="file-menu" label="&extendedlibrary.menu.file;">
+	  <menu id="file-menu" label="&extendedlibrary.menu.file;" accesskey="&extendedlibrary.menu.file.accesskey;">
 		<menupopup id="file-popup">
-		  <menuitem label="&extendedlibrary.menu.file.quit;" oncommand="window.close()"/>
+		  <menuitem label="&extendedlibrary.menu.file.quit;" acceltext="Ctrl+Q" key="quit-key" accesskey="&extendedlibrary.menu.file.quit.accesskey;" oncommand="window.close()"/>
 		</menupopup>
 	  </menu>
-	  <menu id="tools-menu" label="&extendedlibrary.menu.tools;">
+	  <menu id="tools-menu" label="&extendedlibrary.menu.tools;" accesskey="&extendedlibrary.menu.tools.accesskey;">
 		<menupopup id="tools-popup">
-		  <menuitem label="&extendedlibrary.menu.tools.settings;" oncommand="window.open('chrome://extendedlibrary/content/options.xul', '', 'chrome=yes,centerscreen=yes')"/>
+		  <menuitem label="&extendedlibrary.menu.tools.settings;" accesskey="&extendedlibrary.menu.tools.settings.accesskey;" oncommand="window.open('chrome://extendedlibrary/content/options.xul', '', 'chrome=yes,centerscreen=yes')"/>
 		</menupopup>
 	  </menu>
-	  <menu id="help-menu" label="&extendedlibrary.menu.help;">
+	  <menu id="help-menu" label="&extendedlibrary.menu.help;" accesskey="&extendedlibrary.menu.help.accesskey;">
 		<menupopup id="help-popup">
-		  <menuitem label="&extendedlibrary.menu.help.help;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/wiki/show/extlib/Documentation')"/>
-		  <menuitem label="&extendedlibrary.menu.help.releasenotes;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/wiki/show/extlib/Release_Notes')"/>
-		  <menuitem label="&extendedlibrary.menu.help.bugreport;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/spaces/extlib/tickets')"/>
-		  <menuitem label="&extendedlibrary.menu.help.about;" oncommand="window.open('chrome://extendedlibrary/content/about.xul', '', 'chrome=yes,centerscreen=yes')"/>
+		  <menuitem label="&extendedlibrary.menu.help.help;" accesskey="&extendedlibrary.menu.help.help.accesskey;" acceltext="F1" key="help-key" oncommand="extendedlibrary.openUrl('https://www.assembla.com/wiki/show/extlib/Documentation')"/>
+		  <menuseparator/>
+		  <menuitem label="&extendedlibrary.menu.help.releasenotes;" accesskey="&extendedlibrary.menu.help.releasenotes.accesskey;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/wiki/show/extlib/Release_Notes')"/>
+		  <menuitem label="&extendedlibrary.menu.help.bugreport;" accesskey="&extendedlibrary.menu.help.bugreport.accesskey;" oncommand="extendedlibrary.openUrl('https://www.assembla.com/spaces/extlib/tickets')"/>
+		  <menuseparator/>
+		  <menuitem label="&extendedlibrary.menu.help.about;" accesskey="&extendedlibrary.menu.help.about.accesskey;" oncommand="window.open('chrome://extendedlibrary/content/about.xul', '', 'chrome=yes,centerscreen=yes')"/>
 		</menupopup>
 	  </menu>
 	</menubar>
