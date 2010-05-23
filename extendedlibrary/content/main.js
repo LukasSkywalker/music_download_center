@@ -6,7 +6,18 @@ var extendedlibrary = {
 		this.message = strings.getString('extendedlibrary.message');
 		this.searchcomplete = strings.getString('extendedlibrary.searchcomplete');		
 		this.of = strings.getString('extendedlibrary.of');		
+	
+		// Register to receive notifications of preference changes
+		 
+		var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                    .getService(Components.interfaces.nsIPrefService).getBranch("extensions.extendedlibrary.");
+		 
+		var limittime = prefs.getBoolPref("limittime");
+		var resultslimit = prefs.getIntPref("resultslimit");
+		var timelimit = prefs.getIntPref("timelimit");
+		var limitresults = prefs.getBoolPref("limitresults");
 	},
+
 	
 	getFile: function(source) {
 		var req = new XMLHttpRequest();
@@ -25,9 +36,12 @@ var extendedlibrary = {
 		var pattern=/\(\'(.*?)(?=\',\'download\')/g;
 		var counter=0;
 		var matches = new Array(100);
-		while (Ergebnis = pattern.exec(data)) {
+		var now = getCurrentTime();
+		var OKnow = 0;
+		while (Ergebnis = pattern.exec(data) && convertBoolToInt(this.limitresults)*counter<=this.resultslimit && convertBoolToInt(this.limittime)*(OKnow-now) <= this.timelimit) {
 			matches[counter] = Ergebnis[1];
 			++counter;
+			OKnow = getCurrentTime();
 		}
 		var Ergebnis2 = new Array(counter);
 		if (matches){
@@ -158,5 +172,42 @@ var extendedlibrary = {
 		tarea.innerHTML = str;
 		return tarea.value;
 	},
+	
+	observe: function(subject, topic, data)	{
+		if (topic != "nsPref:changed")
+		{
+			return;
+		}
+	 
+		switch(data)
+		{
+			case "limitresults":
+				this.limitresults = this.prefs.getCharPref("limitresults");
+				break;
+			case "limittime":
+				this.limittime = this.prefs.getCharPref("limittime");
+				break;
+			case "timelimit":
+				this.timelimit = this.prefs.getCharPref("timelimit");
+				break;
+			case "resultslimit":
+				this.resultslimit = this.prefs.getCharPref("resultslimit");
+				break;	
+		}
+	},
+	
+	shutdown: function() {
+		this.prefs.removeObserver("", this);
+	},
+	
+	getCurrentTime: function() {
+		var jetzt = new Date();
+		return jetzt.getTime();
+	},
+	
+	convertBoolToInt: function(value) {
+		return (value)?1:0;
+	},
 };
 window.addEventListener("load", function(e) { extendedlibrary.onLoad(e); }, false);
+window.addEventListener("unload", function(e) { extendedlibrary.shutdown(); }, false);
