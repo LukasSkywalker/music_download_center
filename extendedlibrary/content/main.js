@@ -19,6 +19,7 @@ var extendedlibrary = {
 	},
 
 	searchCommand: function() {
+	/*##################	VMP3	################################################*/
 		var searchterm = document.getElementById("find-text").value;
 		var data = extendedlibrary.getFile("http://vmp3.eu/download/mp3/"+escape(searchterm));
 		var pattern=/\(\'(.*?)(?=\',\'download\')/g;
@@ -39,6 +40,18 @@ var extendedlibrary = {
 								content[0]=m[1];
 				extendedlibrary.insertdata(content);
 			}
+		}
+	/*##################	SKREEMR		################################################*/
+		var data = extendedlibrary.getFile("http://skreemr.org/results.jsp?q="+escape(searchterm)+"&l=10&s=0");
+		var pattern=/titles=(.*?) - (.*?)&amp;loader=0xAF2910&amp;soundFile=(.*?)\'>/g;
+		var matches = new Array(10);
+		var content = new Array(10);
+		while (Ergebnis = pattern.exec(data)) {
+			Ergebnis[3] = Ergebnis[3].replace("%3A", ":");
+			content[0] = Ergebnis[3].replace("%2F", "/");
+			content[1] = Ergebnis[1].replace("&#034;", "\"").replace("&#039;", "'");
+			content[2] = Ergebnis[2].replace("&#034;","\"").replace("&#039;", "'");
+			extendedlibrary.insertdata(content);
 		}
 		alert(extendedlibrary.searchcomplete);
 	},
@@ -138,6 +151,12 @@ var extendedlibrary = {
 		  .getService(Components.interfaces.nsIWindowMediator)
 		  .getMostRecentWindow('navigator:browser');
 		win.openUILinkIn(aUrl, 'tab');
+	},
+	
+	html_entity_decode: function(str) {
+		var tarea=content.document.createElement('textarea'); // the "content" part is needed in buttons
+		tarea.innerHTML = str;
+		return tarea.value;
 	},
 };
 window.addEventListener("load", function(e) { extendedlibrary.onLoad(e); }, false);
