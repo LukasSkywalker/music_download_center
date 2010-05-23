@@ -4,12 +4,26 @@
 <prefwindow id="extendedlibraryPreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="boolpref1" name="extensions.extendedlibrary.boolpref" type="bool"/>
-      <preference id="intpref1" name="extensions.extendedlibrary.intpref" type="int"/>
-      <preference id="stringpref1" name="extensions.extendedlibrary.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="limitresults" name="extensions.extendedlibrary.limitresults" type="bool"/>
+      <preference id="limittime" name="extensions.extendedlibrary.limittime" type="bool"/>
+      <preference id="resultslimit" name="extensions.extendedlibrary.reultslimit" type="int"/>
+      <preference id="timelimit" name="extensions.extendedlibrary.timelimit" type="int"/>
     </preferences>
-    <checkbox id="checkboolpref" preference="boolpref1" label="&checkboolpref.label;" accesskey="&checkboolpref.accesskey;"/>
-    <label accesskey="&intpref.accesskey;" control="textintpref">&intpref.label;</label><textbox id="textintpref" preference="intpref1"/>
-    <label accesskey="&stringpref.accesskey;" control="textstringpref">&stringpref.label;</label><textbox id="textstringpref" preference="stringpref1"/>
+    <groupbox>
+  <caption label="Search"/>
+	<label value="Choose the factors which should limit the duration of the search" align="center"/>
+	<hbox>
+		<vbox>
+			<hbox>
+				<checkbox label="time (seconds)" checked="true" preference="limittime"/>
+				<textbox id="your-name" value="10" preference="timelimit"/>
+			</hbox>
+			<hbox>
+				<checkbox label="number of results" checked="true" preference="limitresults"/>
+				<textbox id="your-name" value="20" preference="resultslimit"/>
+			</hbox>
+		</vbox>
+	</hbox>
+	</groupbox>
   </prefpane>
 </prefwindow>
