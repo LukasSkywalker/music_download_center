@@ -7,7 +7,7 @@ var extendedlibrary = {
   onMenuItemCommand: function(e) {
     var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                                   .getService(Components.interfaces.nsIPromptService);
-    window.open("chrome://extendedlibrary/content/main.xul", "", "chrome=yes,resizeable=yes, width=800,height=600");
+    window.open("chrome://extendedlibrary/content/main.xul", "", "chrome=no,resizeable=yes,width=800,height=600");
   },
 
 };
