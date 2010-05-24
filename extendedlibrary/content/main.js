@@ -167,12 +167,6 @@ var extendedlibrary = {
 		win.openUILinkIn(aUrl, 'tab');
 	},
 	
-	html_entity_decode: function(str) {
-		var tarea=content.document.createElement('textarea'); // the "content" part is needed in buttons
-		tarea.innerHTML = str;
-		return tarea.value;
-	},
-	
 	observe: function(subject, topic, data)	{
 		if (topic != "nsPref:changed")
 		{
