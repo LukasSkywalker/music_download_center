@@ -36,12 +36,12 @@ var extendedlibrary = {
 		var pattern=/\(\'(.*?)(?=\',\'download\')/g;
 		var counter=0;
 		var matches = new Array(100);
-		var now = getCurrentTime();
+		var now = this.getCurrentTime();
 		var OKnow = 0;
-		while (Ergebnis = pattern.exec(data) && convertBoolToInt(this.limitresults)*counter<=this.resultslimit && convertBoolToInt(this.limittime)*(OKnow-now) <= this.timelimit) {
+		while (Ergebnis = pattern.exec(data) && this.convertBoolToInt(this.limitresults)*counter<=this.resultslimit && this.convertBoolToInt(this.limittime)*(OKnow-now) <= this.timelimit) {
 			matches[counter] = Ergebnis[1];
 			++counter;
-			OKnow = getCurrentTime();
+			OKnow = this.getCurrentTime();
 		}
 		var Ergebnis2 = new Array(counter);
 		if (matches){
