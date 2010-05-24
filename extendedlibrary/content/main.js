@@ -1,4 +1,9 @@
 var extendedlibrary = {
+	limittime: true,
+	limitresults: true,
+	timelimit: 20,
+	resultslimit: 15,
+
 	onLoad: function() {
 		// initialization code
 		this.initialized = true;
@@ -12,10 +17,10 @@ var extendedlibrary = {
 		var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                     .getService(Components.interfaces.nsIPrefService).getBranch("extensions.extendedlibrary.");
 		 
-		var limittime = prefs.getBoolPref("limittime");
-		var resultslimit = prefs.getIntPref("resultslimit");
-		var timelimit = prefs.getIntPref("timelimit");
-		var limitresults = prefs.getBoolPref("limitresults");
+		this.limittime = prefs.getBoolPref("limittime");
+		this.resultslimit = prefs.getIntPref("resultslimit");
+		this.timelimit = prefs.getIntPref("timelimit");
+		this.limitresults = prefs.getBoolPref("limitresults");
 	},
 
 	
