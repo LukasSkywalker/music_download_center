@@ -17,7 +17,7 @@ const main = new function() {
 	this.get = function(url, callback) {
 	  var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
-    xhr.onreadystatechange = function(ev){
+    xhr.onreadystatechange = function(ev) {
       console.log(xhr.readyState, xhr.status );
       if(xhr.readyState === 4 && xhr.status === 200){
         callback(xhr.responseText);

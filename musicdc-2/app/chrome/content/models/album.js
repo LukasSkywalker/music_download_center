@@ -53,7 +53,7 @@ Album.parseSearch = function( data ) {
   var albums = results.albummatches;
   for( var i = 0; i < albums.length; i++ ) {
     var a = albums[i];
-    var album = new Album(a.name, a.artist, a.id, a.mbid, a.url, a.image[1].#text);
+    var album = new Album(a.name, a.artist, a.id, a.mbid, a.url, a.image[1]['#text']);
     console.log(album);
   }
 }
