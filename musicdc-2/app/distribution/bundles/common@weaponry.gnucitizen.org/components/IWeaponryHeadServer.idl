@@ -1,0 +1,58 @@
+/**
+ *  IWeaponryHeadServer.idl
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+#include "nsISupports.idl"
+#include "nsIInputStream.idl"
+#include "nsIOutputStream.idl"
+
+/* ------------------------------------------------------------------------ */
+
+interface IWeaponryHeadServerHandler;
+interface IWeaponryHeadServer;
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, function, uuid(45d465b0-cf38-11df-bd3b-0800200c9a66)]
+interface IWeaponryHeadServerHandler : nsISupports {
+	void handleHeadRequest(in AString head, in nsIInputStream inputStream, in nsIOutputStream outputStream);
+};
+
+/* ------------------------------------------------------------------------ */
+
+[scriptable, uuid(54ae8a80-cf37-11df-bd3b-0800200c9a66)]
+interface IWeaponryHeadServer : nsISupports {
+	const unsigned long DEFAULT_BACKLOG = 50;
+	
+	const unsigned long DEFAULT_SEGMENT_SIZE = 8192;
+	
+	const unsigned long DEFAULT_SEGMENT_COUNT = 1024;
+	
+	/* -------------------------------------------------------------------- */
+	
+	void init(in long port, in IWeaponryHeadServerHandler handler, [optional] in long backlog, [optional] in boolean isLoopback);
+	
+	/* -------------------------------------------------------------------- */
+	
+	void start();
+	
+	void stop();
+};
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

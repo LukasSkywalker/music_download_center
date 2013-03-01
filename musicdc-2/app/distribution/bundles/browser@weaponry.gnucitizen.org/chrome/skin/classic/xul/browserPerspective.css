@@ -1,0 +1,79 @@
+/**
+ *  browserPerspective.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+@import url("chrome://global/skin/");
+
+/* ------------------------------------------------------------------------ */
+
+#browser-perspective-open-tab-toolbarbutton > image {
+	margin: 0px;
+}
+
+#browser-perspective-open-tab-toolbarbutton > label {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton {
+	list-style-image: url("images/open.mac.still.png");
+}
+
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+	list-style-image: url("images/open.mac.hovered.png");
+}
+
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	list-style-image: url("images/open.mac.disabled.png");
+}
+
+:root[lookandfeel="mac"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+	list-style-image: url("images/open.mac.pressed.png");
+}
+
+/* ------------------------------------------------------------------------ */
+
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton {
+	list-style-image: url("moz-icon://stock/gtk-add?size=16");
+}
+
+:root[lookandfeel="lin"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	list-style-image: url("moz-icon://stock/gtk-add?size=16&state=disabled");
+}
+
+/* ------------------------------------------------------------------------ */
+
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton {
+	list-style-image: url("images/open.win.still.png");
+}
+
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover {
+	list-style-image: url("images/open.win.hovered.png");
+}
+
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton[disabled="true"] {
+	list-style-image: url("images/open.win.disabled.png");
+}
+
+:root[lookandfeel="win"] #browser-perspective-open-tab-toolbarbutton:not([disabled="true"]):hover:active {
+	list-style-image: url("images/open.win.pressed.png");
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

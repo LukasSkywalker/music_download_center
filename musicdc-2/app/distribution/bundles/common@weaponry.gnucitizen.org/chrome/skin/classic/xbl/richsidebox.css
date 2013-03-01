@@ -1,0 +1,191 @@
+/**
+ *  richsidebox.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+richsidebox > .richsidebox-container .richsidebox-contentbox > .contentbox-container .contentbox-content {
+	-moz-box-orient: horizontal;
+}
+
+/* ------------------------------------------------------------------------ */
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem {
+	overflow: hidden;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-align: center;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidebox-richlistbox {
+	margin: 0px;
+	padding: 0px;
+	max-width: 60px;
+	background: #212121;
+	-moz-appearance: none;
+}
+
+richsidebox.darkish:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #252525;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem {
+	color: #ffffff;
+	background: transparent;
+	filter: url("effects/common.svg#blur");
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	filter: url("effects/common.svg#white");
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox image {
+	margin: 10px 0px 10px 0px;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidepanel-hbox label {
+	display: none;
+}
+
+richsidebox.darkish > .richsidebox-container .richsidebox-splitter {
+	display: none;
+}
+
+richsidebox.darkish > richsidepanel {
+	background: #f5f5f5;
+}
+
+/* ------------------------------------------------------------------------ */
+
+richsidebox.plain > .richsidebox-container richlistbox {
+	margin: 0px;
+	padding: 0px;
+	background: #eeeeee;
+	-moz-appearance: none;
+}
+
+richsidebox.plain > .richsidebox-container richlistitem {
+	padding: 10px;
+	padding-left: 20px;
+}
+
+richsidebox.plain > .richsidebox-container richlistitem label {
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+richsidebox.plain > .richsidebox-container richlistitem[selected="true"] label {
+	text-shadow: black 0px 1px;
+}
+
+richsidebox.plain > .richsidebox-container richlistbox > richlistitem[selected="true"]       ,
+richsidebox.plain > .richsidebox-container richlistbox:focus > richlistitem[selected="true"] {
+	color: #ffffff;
+	background-image: none;
+	background-color: #222222;
+}
+
+richsidebox.plain > .richsidebox-container richlistbox > richlistitem:not([selected="true"])                 ,
+richsidebox.plain > .richsidebox-container richlistbox > richlistitem:nth-child(2n+1):not([selected="true"]) {
+	background-image: none;
+	background-color: transparent;
+}
+
+/* ------------------------------------------------------------------------ */
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+	overflow: hidden;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-align: center;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	margin: 0px;
+	padding: 0px;
+	max-width: 60px;
+	-moz-appearance: none;
+}
+
+:root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	background: #000000;
+}
+
+:root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	background: #212121;
+}
+
+:root[lookandfeel="lin"] richsidebox.cosmopolitan > .richsidebox-container .richsidebox-richlistbox {
+	background: #212121;
+}
+
+:root[lookandfeel="win"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #000000;
+}
+
+:root[lookandfeel="mac"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #252525;
+}
+
+:root[lookandfeel="lin"] richsidebox.cosmopolitan:-moz-window-inactive > .richsidebox-container .richsidebox-richlistbox {
+	background: #252525;
+}
+
+:root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem {
+	color: #ffffff;
+	background: transparent;
+	filter: url("effects/common.svg#blur");
+}
+
+:root[lookandfeel="win"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	background: #000000;
+	filter: url("effects/common.svg#invert");
+}
+
+:root[lookandfeel="mac"] richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-richlistitem[selected="true"] {
+	filter: url("effects/common.svg#white");
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox {
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox image {
+	margin: 10px 0px 10px 0px;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidepanel-hbox label {
+	display: none;
+}
+
+richsidebox.cosmopolitan > .richsidebox-container .richsidebox-splitter {
+	display: none;
+}
+
+richsidebox.cosmopolitan > richsidepanel {
+	background: #f5f5f5;
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

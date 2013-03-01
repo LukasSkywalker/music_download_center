@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+ *  helpMenu.xul
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<?xml-stylesheet href="chrome://org.gnucitizen.websecurify.support/skin/ovl/helpMenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://org.gnucitizen.websecurify.support/locale/ovl/helpMenu.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/x-javascript" src="chrome://org.gnucitizen.websecurify.support/content/ovl/helpMenu.js"/>
+	
+	<stringbundleset id="common-stringbundleset">
+		<stringbundle id="websecurify-support-help-menu-properties-stringbundle" src="chrome://org.gnucitizen.websecurify.support/locale/ovl/helpMenu.properties"/>
+	</stringbundleset>
+	
+	<menupopup id="help-menupopup">
+		<menuseparator id="websecurify-support-help-menu-help-section-menuseparator"/>
+		<menuitem id="websecurify-support-help-menu-help-menuitem" label="&websecurify-support-help-menu-help-menuitem-label;"/>
+		<menuseparator id="websecurify-support-help-menu-feedback-section-menuseparator"/>
+		<menuitem id="websecurify-support-help-menu-send-feedback-menuitem" label="&websecurify-support-help-menu-send-feedback-menuitem-label;"/>
+		<menuseparator id="websecurify-support-help-menu-bugs-section-menuseparator"/>
+		<menuitem id="websecurify-support-help-menu-report-bugs-menuitem" label="&websecurify-support-help-menu-report-bugs-menuitem-label;"/>
+		<menuitem id="websecurify-support-help-menu-request-features-menuitem" label="&websecurify-support-help-menu-request-features-menuitem-label;"/>
+		<menuseparator id="websecurify-support-help-menu-custom-section-menuseparator"/>
+		<menuitem id="websecurify-support-help-menu-go-to-websecurify-menuitem" label="&websecurify-support-help-menu-go-to-websecurify-menuitem-label;"/>
+		<menuitem id="websecurify-support-help-menu-go-to-gnucitizen-menuitem" label="&websecurify-support-help-menu-go-to-gnucitizen-menuitem-label;"/>
+	</menupopup>
+	
+</overlay>
+<!--
+ *  GNUCITIZEN (Information Security Think Tank)
+ ***********************************************
+-->

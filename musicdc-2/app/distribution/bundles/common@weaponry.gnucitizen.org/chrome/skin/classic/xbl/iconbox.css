@@ -1,0 +1,55 @@
+/**
+ *  iconbox.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+icon.modern > .icon-container .icon-vbox {
+	padding: 5px;
+	-moz-box-align: center;
+}
+
+icon.modern > .icon-container .icon-vbox:hover {
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 1px 1px #444444;
+}
+
+icon.modern[selected="true"] > .icon-container .icon-vbox {
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 1px 1px #444444;
+}
+
+/* ------------------------------------------------------------------------ */
+
+
+iconbox.modern > .iconbox-container .iconbox-content {
+	display: block;
+	overflow: auto;
+	background: #222222 url("images/highlight.png") 50% 0px no-repeat;
+}
+
+iconbox.modern > icon {
+	margin: 10px;
+	width: 140px;
+	display: table-cell;
+}
+
+iconbox.modern > icon > .icon-container .icon-label {
+	color: #ffffff;
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/

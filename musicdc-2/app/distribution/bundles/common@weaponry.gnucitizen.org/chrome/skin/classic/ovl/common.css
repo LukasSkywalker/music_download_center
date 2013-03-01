@@ -1,0 +1,235 @@
+/**
+ *  common.css
+ *  Copyright (C) 2007-2011  GNUCITIZEN
+ *  
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+.common-start-button  ,
+.common-stop-button   ,
+.common-pause-button  ,
+.common-resume-button ,
+.common-act-button    ,
+.common-push-button   {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	min-width: 0px;
+	min-height: 0px;
+	-moz-appearance: none;
+	background-color: transparent;
+	list-style-image: url("images/buttons.png");
+}
+
+.common-start-button .button-icon  ,
+.common-stop-button .button-icon   ,
+.common-pause-button .button-icon  ,
+.common-resume-button .button-icon ,
+.common-act-button .button-icon    ,
+.common-push-button .button-icon   {
+	display: -moz-box;
+}
+
+.common-start-button hbox  ,
+.common-stop-button hbox   ,
+.common-pause-button hbox  ,
+.common-resume-button hbox ,
+.common-act-button hbox    ,
+.common-push-button hbox   {
+	margin: 0px;
+	padding: 0px;
+}
+
+.common-start-button label  ,
+.common-stop-button label   ,
+.common-pause-button label  ,
+.common-resume-button label ,
+.common-act-button label    ,
+.common-push-button label   {
+	margin: 0px;
+	padding: 0px;
+	display: none;
+}
+
+.common-start-button {
+	-moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+.common-start-button:hover {
+	-moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+.common-start-button:hover:active {
+	-moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+.common-stop-button {
+	-moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.common-stop-button:hover {
+	-moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.common-stop-button:hover:active {
+	-moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+.common-pause-button {
+	-moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+
+.common-pause-button:hover {
+	-moz-image-region: rect(48px, 32px, 64px, 16px);
+}
+
+.common-pause-button:hover:active {
+	-moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+
+.common-resume-button {
+	-moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+.common-resume-button:hover {
+	-moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+.common-resume-button:hover:active {
+	-moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+.common-act-button {
+	-moz-image-region: rect(32px, 16px, 48px, 0px);
+}
+
+.common-act-button:hover {
+	-moz-image-region: rect(32px, 32px, 48px, 16px);
+}
+
+.common-act-button:hover:active {
+	-moz-image-region: rect(32px, 48px, 48px, 32px);
+}
+
+.common-push-button {
+	-moz-image-region: rect(80px, 16px, 96px, 0px);
+}
+
+.common-push-button:hover {
+	-moz-image-region: rect(80px, 32px, 96px, 16px);
+}
+
+.common-push-button:active {
+	-moz-image-region: rect(80px, 48px, 96px, 32px);
+}
+
+/* ------------------------------------------------------------------------ */
+
+tree.sourcetree {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	-moz-appearance: none;
+}
+
+tree.sourcetree treechildren::-moz-tree-row {
+	background: transparent;
+}
+
+tree.sourcetree treechildren::-moz-tree-row(header) {
+	-moz-user-focus: ignore;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree {
+	background-color: #d2d8e2;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive {
+	background-color: #e8e8e8;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row {
+	height: 20px;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row(selected) {
+	background: url("images/sourcetree.selected.active.png") repeat-x;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(selected) {
+	background: url("images/sourcetree.selected.inactive.png") repeat-x;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-row(header, selected) {
+	background: none;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree:-moz-window-inactive treechildren::-moz-tree-row(header, selected) {
+	background: none;
+}
+
+:root[lookandfeel="mac"] tree.sourcetree treechildren::-moz-tree-cell-text(header) {
+	color: #607081;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------------ */
+
+:root[lookandfeel="mac"] toolbar.unified {
+	-moz-appearance: -moz-mac-unified-toolbar;
+}
+
+/* ------------------------------------------------------------------------ */
+
+toolbar.cosmopolitan {
+	position: relative;
+}
+
+:root[lookandfeel="win"] toolbar.cosmopolitan {
+	border: 0px;
+	padding: 5px;
+	-moz-appearance: none;
+	background: -moz-linear-gradient(135deg, #eeeeee 50%, #dddddd 100%);
+}
+
+:root[lookandfeel="win"] toolbar.cosmopolitan toolbarbutton {
+	border: 0px;
+	-moz-appearance: none;
+}
+
+:root[lookandfeel="win"] toolbar.cosmopolitan toolbarbutton[disabled="false"]:hover {
+	background: #cccccc;
+}
+
+/* ------------------------------------------------------------------------ */
+
+:root[lookandfeel="mac"] toolbarbutton.native {
+	-moz-box-orient: vertical;
+}
+
+/* ------------------------------------------------------------------------ */
+
+toolbar.rightylicious {
+	-moz-box-pack: end;
+	-moz-appearance: none;
+}
+
+toolbar.rightylicious > toolbarbutton > label {
+	display: none;
+}
+
+/*  GNUCITIZEN (Information Security Think Tank)
+ **********************************************/
