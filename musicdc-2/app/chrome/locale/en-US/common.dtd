@@ -1,0 +1,63 @@
+<!ENTITY extendedlibrary.label "Music Download Center">
+<!ENTITY extendedlibrary.artist "Artist">
+<!ENTITY extendedlibrary.title "Title">
+<!ENTITY extendedlibrary.search "Search">
+<!ENTITY extendedlibrary.context.download "Download">
+<!ENTITY extendedlibrary.context.downloadToFolder "Download to folder...">
+<!ENTITY extendedlibrary.context.preview "Preview">
+<!-- SERVICEMAN -->
+<!ENTITY extendedlibrary.service "Service">
+<!ENTITY extendedlibrary.services "Services">
+<!ENTITY extendedlibrary.advantages "Advantages">
+<!ENTITY extendedlibrary.disadvantages "Disadvantages">
+<!ENTITY extendedlibrary.enabled "Enabled">
+<!ENTITY extendedlibrary.suggestNewService "Suggest a new service">
+<!ENTITY extendedlibrary.appearance "Appearance">
+<!ENTITY extendedlibrary.showHideTooltips "Show Tooltips">
+<!ENTITY extendedlibrary.showMenubar "Show menubar">
+<!ENTITY extendedlibrary.advanced "Advanced">
+<!ENTITY extendedlibrary.resetFirstRun "Show Firstrun dialog">
+<!ENTITY extendedlibrary.resetFirstRun.description "enable when the preview doesn't work">
+<!ENTITY extendedlibrary.website "Website">
+<!ENTITY extendedlibrary.bugs "Bugs">
+<!-- RADIO -->
+<!ENTITY extendedlibrary.radio "Radio">
+<!ENTITY extendedlibrary.genre "Genre">
+<!ENTITY extendedlibrary.orSearch "or Search">
+<!ENTITY extendedlibrary.other "Other">
+<!ENTITY extendedlibrary.share "Share">
+<!ENTITY extendedlibrary.link "Link Address">
+<!ENTITY extendedlibrary.email "email">
+<!ENTITY extendedlibrary.urlToPls "URL to .pls-file">
+<!ENTITY extendedlibrary.urlToStream "or URL to Stream">
+<!ENTITY extendedlibrary.pickLocalPls "or pick local .pls">
+<!ENTITY extendedlibrary.name "Name">
+<!ENTITY extendedlibrary.listeners "Listeners">
+<!ENTITY extendedlibrary.bookmarks "Bookmarks">
+<!-- HISTORY -->
+<!ENTITY extendedlibrary.history "History">
+<!ENTITY extendedlibrary.lastPlayed "Last Played">
+<!ENTITY extendedlibrary.timesPlayed "Times Played">
+<!-- INTERNET -->
+<!ENTITY extendedlibrary.internet "Internet">
+<!ENTITY mybrowser.home "Home">
+<!ENTITY mybrowser.back "Back">
+<!ENTITY mybrowser.forward "Forward">
+<!ENTITY mybrowser.reload "Reload">
+<!ENTITY mybrowser.stop "Stop">
+<!ENTITY mybrowser.go "Go">
+<!-- FIRSTUN -->
+<!ENTITY extendedlibrary.firstrun.description1 "Welcome to Music Download Center. Please take 20 seconds to ensure that you have Adobe Flash Player installed.">
+<!ENTITY extendedlibrary.firstrun.description2 "Can you see the player below and listen to the music?">
+<!ENTITY extendedlibrary.firstrun.doSomething "Press 'Works!!!' if everything works fine or 'Doesn't work' for installing Flash Player.">
+<!ENTITY extendedlibrary.firstrun.notworking "Doesn't work...">
+<!ENTITY extendedlibrary.firstrun.working "Works!!!">
+<!-- PLAYLIST-->
+<!ENTITY extendedlibrary.remove "Remove">
+<!-- OTHER -->
+<!ENTITY extendedlibrary.password "Password">
+<!ENTITY extendedlibrary.confirm "Confirm">
+<!ENTITY extendedlibrary.lock "OK">
+<!--<!ENTITY extendedlibrary.passwordChanged "Password was changed.">-->
+<!ENTITY extendedlibrary.passwordWrong "Wrong password. Please try again.">
+<!ENTITY extendedlibrary.passwordSet "Password is set.">

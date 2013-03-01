@@ -1,0 +1,6 @@
+content mdc                 chrome/content/
+locale  mdc	       en-US    chrome/locale/en-US/
+skin    mdc        default  chrome/skin/default/
+
+locale  branding   en-US    chrome/locale/branding/
+content branding            chrome/content/branding/
