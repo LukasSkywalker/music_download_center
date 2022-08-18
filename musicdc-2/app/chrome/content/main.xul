@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://mdc/skin/main.css" type="text/css" ?>
+
+<?xul-overlay href="chrome://mdc/content/menubar.xul"?>
+
+<!DOCTYPE window [
+  <!ENTITY % commonDTD SYSTEM "chrome://mdc/locale/common.dtd" >
+  %commonDTD;
+  <!ENTITY % brandingDTD SYSTEM "chrome://branding/locale/brand.dtd">
+  %brandingDTD;
+]>
+
+<window id="main-window"
+				xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+				windowtype="MDC:Main"
+				title="&brandShortName;"
+				width="1024" height="768"
+				persist="screenX screenY width height sizemode">
+	
+	<script type="application/javascript" src="main.js"/>
+
+  <deck>
+    <vbox flex="1">
+      <toolbox>
+        <toolbar id="menubar"/>
+      </toolbox>
+    </vbox>
+  </deck>
+  <hbox flex="1">
+    <vbox width="60">
+      <button onclick="main.navigateTo('chrome://mdc/content/search.xul')">Search</button>
+      <button onclick="main.navigateTo('chrome://mdc/content/preferences.xul')">Preferences</button>
+      <button onclick="main.navigateTo('chrome://mdc/content/about.xul')">About</button>
+    </vbox>
+    <vbox flex="1">
+      <iframe id="content" src="chrome://mdc/content/search.xul" flex="1" style="border: 1px dashed red; padding: 12px;"/>
+    </vbox>
+  </hbox>
+</window>

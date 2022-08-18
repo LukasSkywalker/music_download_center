@@ -1,0 +1,22 @@
+Introduction
+============
+
+Music Download Center is a tool for listening to and downloading music. 
+
+How to Run
+==============
+
+    1. Download XULRunner 18.0 or later and install for your platform.
+    2. Download the MDC source
+    3. Run MDC:
+        * /path/to/xulrunner --app /path/to/mdc/app/application.ini
+
+
+About The Authors
+=================
+
+At the current stage the tool is exclusively developed by Lukas (Lukas_Skywalker)
+Diener. If you want to contribute, please let me know.
+
+    * Authors:
+        1. Lukas Diener
