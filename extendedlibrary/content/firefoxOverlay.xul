@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://extendedlibrary/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://extendedlibrary/locale/extendedlibrary.dtd">
+<overlay id="extendedlibrary-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="extendedlibrary-strings" src="chrome://extendedlibrary/locale/extendedlibrary.properties"/>
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="extendedlibrary-hello" label="&extendedlibrary.label;" 
+              oncommand="extendedlibrary.onMenuItemCommand(event);"/>
+  </menupopup>
+</overlay>

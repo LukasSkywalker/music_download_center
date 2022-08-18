@@ -1,0 +1,4 @@
+content	extendedlibrary	content/
+locale	extendedlibrary	en-US	locale/en-US/
+skin	extendedlibrary	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://extendedlibrary/content/firefoxOverlay.xul
